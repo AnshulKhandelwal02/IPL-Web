@@ -45,15 +45,26 @@ export interface UserData {
   color: string;
 }
 
+/** Constants used to fill up our data base. */
+const COLORS: string[] = [
+  'maroon', 'red', 'orange', 'yellow', 'olive', 'green', 'purple', 'fuchsia', 'lime', 'teal',
+  'aqua', 'blue', 'navy', 'black', 'gray'
+];
+const NAMES: string[] = [
+  'Maia', 'Asher', 'Olivia', 'Atticus', 'Amelia', 'Jack', 'Charlotte', 'Theodore', 'Isla', 'Oliver',
+  'Isabella', 'Jasper', 'Cora', 'Levi', 'Violet', 'Arthur', 'Mia', 'Thomas', 'Elizabeth'
+];
+
 @Component({
-  selector: 'app-gokuldham',
-  templateUrl: './gokuldham.component.html',
-  styleUrls: ['./gokuldham.component.css']
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
 })
-export class GokuldhamComponent implements OnInit {
+export class HomeComponent implements OnInit {
   title = 'ClientApp';
   displayedColumns: string[];
   isLoading = false;
+  matchday: number;
 
   baseUrl: string = 'https://ipl-data.azurewebsites.net/'; // 'https://localhost:44327/'
 
@@ -70,13 +81,14 @@ export class GokuldhamComponent implements OnInit {
 
   getSummaryData() {
     this.isLoading = true;
-    this._http.get<IApiResponse<DataResponse>>(this.baseUrl + 'data/gokuldham-summary').subscribe(result => {
+    this._http.get<IApiResponse<DataResponse>>(this.baseUrl + 'data/summary').subscribe(result => {
       console.log(result);
       this.isLoading = false;
       //this.teamSummary = result.data;
       // Assign the data to the data source for the table to render
       this.dataSource = new MatTableDataSource(result.data.summaryData);
       this.displayedColumns = result.data.columnsList;
+      this.matchday = result.data.matchDay;
 
       this.dataSource.sort = this.sort;
     }, error => {
