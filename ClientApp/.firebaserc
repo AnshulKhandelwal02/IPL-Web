@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "ipl-2020-596ce": {
+      "hosting": {
+        "ClientApp": [
+          "ipl-2020-596ce"
+        ]
+      }
+    }
+  }
+}
