@@ -17,13 +17,15 @@ import { AppComponent } from './app.component';
 import { GokuldhamComponent } from './gokuldham/gokuldham.component';
 import { MahasangramComponent } from './mahasangram/mahasangram.component';
 import { HomeComponent } from './home/home.component';
+import { MahasangramAdminComponent } from './mahasangram-admin/mahasangram-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     GokuldhamComponent,
     MahasangramComponent,
-    HomeComponent
+    HomeComponent,
+    MahasangramAdminComponent
   ],
   imports: [
     BrowserModule,
