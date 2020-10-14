@@ -6,9 +6,9 @@ import { GokuldhamComponent } from './gokuldham/gokuldham.component';
 import { MahasangramComponent } from './mahasangram/mahasangram.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent, pathMatch: 'full' },
   { path: 'gokuldham', component: GokuldhamComponent },
   { path: 'mahasangram', component: MahasangramComponent },
+  { path: '', component: HomeComponent, pathMatch: 'full' }
 ];
 
 @NgModule({
