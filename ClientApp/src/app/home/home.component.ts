@@ -61,7 +61,7 @@ const NAMES: string[] = [
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = 'ClientApp';
+  title = 'IPL-2020';
   displayedColumns: string[];
   isLoading = false;
   matchday: number;
