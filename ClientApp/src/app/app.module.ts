@@ -18,6 +18,7 @@ import { GokuldhamComponent } from './gokuldham/gokuldham.component';
 import { MahasangramComponent } from './mahasangram/mahasangram.component';
 import { HomeComponent } from './home/home.component';
 import { MahasangramAdminComponent } from './mahasangram-admin/mahasangram-admin.component';
+import { GokuldhamAdminComponent } from './gokuldham-admin/gokuldham-admin.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MahasangramAdminComponent } from './mahasangram-admin/mahasangram-admin
     GokuldhamComponent,
     MahasangramComponent,
     HomeComponent,
-    MahasangramAdminComponent
+    MahasangramAdminComponent,
+    GokuldhamAdminComponent
   ],
   imports: [
     BrowserModule,

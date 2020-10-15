@@ -6,7 +6,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
 
 import {DataSource} from '@angular/cdk/collections';
-import { IApiResponse, TeamSummary, TeamDataList, DataResponse } from "../models";
+import { IApiResponse, TeamSummary, TeamDataList, DataResponse, ApiRef } from "../models";
 
 
 @Component({
@@ -19,8 +19,7 @@ export class MahasangramAdminComponent implements OnInit {
   displayedColumns: string[];
   isLoading = false;
 
-  baseUrl: string = 'https://ipl-data.azurewebsites.net/';
-  // baseUrl: string = 'https://localhost:44327/';
+  baseUrl: string = ApiRef.baseUrl;
 
   dataSource: MatTableDataSource<TeamSummary>;  
   @ViewChild(MatSort) sort: MatSort;

@@ -8,16 +8,17 @@ import {MatTableDataSource} from '@angular/material/table';
 import {DataSource} from '@angular/cdk/collections';
 import { IApiResponse, TeamSummary, TeamDataList, DataResponse, ApiRef } from "../models";
 
+
+
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-gokuldham-admin',
+  templateUrl: './gokuldham-admin.component.html',
+  styleUrls: ['./gokuldham-admin.component.css']
 })
-export class HomeComponent implements OnInit {
-  title = 'IPL-2020';
+export class GokuldhamAdminComponent implements OnInit {
+  title = 'ClientApp';
   displayedColumns: string[];
   isLoading = false;
-  matchday: number;
 
   baseUrl: string = ApiRef.baseUrl;
 
@@ -34,14 +35,13 @@ export class HomeComponent implements OnInit {
 
   getSummaryData() {
     this.isLoading = true;
-    this._http.get<IApiResponse<DataResponse>>(this.baseUrl + 'data/summary').subscribe(result => {
+    this._http.get<IApiResponse<DataResponse>>(this.baseUrl + 'data/gokuldham-summary-admin').subscribe(result => {
       console.log(result);
       this.isLoading = false;
       //this.teamSummary = result.data;
       // Assign the data to the data source for the table to render
       this.dataSource = new MatTableDataSource(result.data.summaryData);
       this.displayedColumns = result.data.columnsList;
-      this.matchday = result.data.matchDay;
 
       this.dataSource.sort = this.sort;
     }, error => {

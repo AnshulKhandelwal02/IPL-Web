@@ -38,3 +38,8 @@ export interface TeamSummary {
    fatal,
    successWithWarning
  }
+
+ export const ApiRef = {
+   // baseUrl: 'https://ipl-data.azurewebsites.net/'
+    baseUrl: 'https://localhost:44327/'
+ }
