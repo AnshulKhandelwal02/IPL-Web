@@ -40,6 +40,6 @@ export interface TeamSummary {
  }
 
  export const ApiRef = {
-   // baseUrl: 'https://ipl-data.azurewebsites.net/'
-    baseUrl: 'https://localhost:44327/'
+   baseUrl: 'https://ipl-data.azurewebsites.net/'
+    // baseUrl: 'https://localhost:44327/'
  }
